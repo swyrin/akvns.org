@@ -1,31 +1,63 @@
-import {
-  Quicksand as VNS_Font,
-  Geist_Mono as VNS_Font_Mono,
-} from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Quicksand as VNS_Font, Geist_Mono as VNS_Font_Mono } from "next/font/google";
+import type React from "react";
 import { TerraTheme } from "@/components/TerraTheme";
 
 import "./globals.css";
 
 const font = VNS_Font({
-  variable: "--font-vns",
-  subsets: ["latin"],
+    variable: "--font-vns",
+    subsets: ["latin", "vietnamese"],
 });
 
 const fontMono = VNS_Font_Mono({
-  variable: "--font-vns-mono",
-  subsets: ["latin"],
+    variable: "--font-vns-mono",
+    subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+    metadataBase: new URL(process.env.PRODUCTION_URL as string),
+    title: "Arknights Vietnam Station",
+    description: "For the Doctors, by the Doctors.",
+    authors: [
+        {
+            name: "Trạm dừng chân chốn Terra",
+            url: "https://facebook.com/terrastationvn",
+        },
+        {
+            name: "Dreamchasers - IT Team",
+            url: "https://github.com/arknights-vns",
+        },
+    ],
+    openGraph: {
+        url: process.env.PRODUCTION_URL,
+        title: "Arknights Vietnam Station",
+        siteName: "Arknights Vietnam Station",
+        description: "For the Doctors, by the Doctors.",
+        countryName: "Vietnam",
+        locale: "vi-VN",
+    },
+};
+
+export const viewport: Viewport = {
+    colorScheme: "light dark",
+    initialScale: 1.0,
+};
+
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${font.variable} ${fontMono.variable} antialiased`}>
-        <TerraTheme>{children}</TerraTheme>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning>
+            {/*
+            font-sans here is intentional, override your stuffs with font-mono if needed.
+                    - Đụt, your beloved.
+            */}
+            <body className={`${font.variable} ${fontMono.variable} antialiased font-sans`}>
+                <TerraTheme>{children}</TerraTheme>
+            </body>
+        </html>
+    );
 }

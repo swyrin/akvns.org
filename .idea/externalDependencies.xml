@@ -3,6 +3,7 @@
   <component name="ExternalDependencies">
     <plugin id="com.github.biomejs.intellijbiome" />
     <plugin id="com.intellij.tailwindcss" />
+    <plugin id="intellij.nextjs" />
     <plugin id="org.editorconfig.editorconfigjetbrains" />
   </component>
 </project>
