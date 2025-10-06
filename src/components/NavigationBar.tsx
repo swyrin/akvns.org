@@ -27,7 +27,11 @@ export default function NavigationBar() {
             <div className="flex">
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button className="ml-4 self-center lg:hidden" size="icon" variant="outline">
+                        <Button
+                            className="ml-4 self-center lg:hidden"
+                            size="icon"
+                            variant="outline"
+                            aria-label="burger-menu">
                             <Menu />
                         </Button>
                     </SheetTrigger>
@@ -51,7 +55,7 @@ export default function NavigationBar() {
                     <Image alt="VNS_Logo_Header" className="size-[50px] dark:invert" src={VNS_Logo} />
                 </Link>
             </div>
-            <NavigationMenu className="hidden gap-6 lg:flex" viewport>
+            <NavigationMenu className="hidden gap-6 lg:flex" viewport aria-label="nav-bar">
                 <NavigationMenuList className="gap-x-8">
                     {links.map((entry) => {
                         return (

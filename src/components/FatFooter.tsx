@@ -63,7 +63,7 @@ export default function FatFooter() {
                 </div>
             </div>
             <div className="text-center my-4 font-bold italic">
-                © Bản quyền của{" "}
+                ©{" "}
                 <Link href="/" className="text-red-600 font-extrabold">
                     Arknights Vietnam Station
                 </Link>
