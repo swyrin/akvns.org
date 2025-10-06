@@ -10,7 +10,7 @@ export default function RootLayout({
     return (
         <>
             <NavigationBar />
-            <div className={"max-w-screen min-h-screen"}>{children}</div>
+            <div className="max-w-screen min-h-screen scroll-smooth">{children}</div>
             <FatFooter />
         </>
     );

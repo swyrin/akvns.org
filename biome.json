@@ -24,6 +24,9 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
+      },
+      "style": {
+        "useConsistentCurlyBraces": "error"
       }
     },
     "domains": {
