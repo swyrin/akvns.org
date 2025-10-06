@@ -5,6 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Button } from "@/components/ui/button";
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const links: { label: string; href: Route }[] = [
@@ -16,11 +23,8 @@ const links: { label: string; href: Route }[] = [
 
 export default function NavigationBar() {
     return (
-        <header
-            className={
-                "flex sticky top-0 z-50 h-18 w-full drop-shadow-neutral-600 drop-shadow-2xl backdrop-blur-lg justify-between"
-            }>
-            <div className={"flex"}>
+        <header className="flex sticky top-0 z-50 bg-background h-18 w-full justify-between drop-shadow-neutral-400/15 drop-shadow-2xl">
+            <div className="flex">
                 <Sheet>
                     <SheetTrigger asChild>
                         <Button className="ml-4 self-center lg:hidden" size="icon" variant="outline">
@@ -43,19 +47,27 @@ export default function NavigationBar() {
                         </div>
                     </SheetContent>
                 </Sheet>
-                <Link className="ml-4 md:ml-12 flex items-center gap-4" href="/" prefetch={false}>
+                <Link className="ml-4 md:ml-12 flex items-center gap-4" href="/">
                     <Image alt="VNS_Logo_Header" className="size-[50px] dark:invert" src={VNS_Logo} />
                 </Link>
             </div>
-            <nav className="hidden gap-6 lg:flex place-content-center-safe justify-evenly flex-wrap w-1/2">
-                {links.map((entry) => {
-                    return (
-                        <Link key={entry.label} href={entry.href}>
-                            {entry.label}
-                        </Link>
-                    );
-                })}
-            </nav>
+            <NavigationMenu className="hidden gap-6 lg:flex" viewport>
+                <NavigationMenuList className="gap-x-8">
+                    {links.map((entry) => {
+                        return (
+                            <NavigationMenuItem key={entry.label}>
+                                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                    <Link
+                                        href={entry.href}
+                                        className="relative inline-block after:bottom-[-0.25em] after:absolute after:left-1/2 after:h-[3px] after:w-0 after:-translate-x-1/2 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">
+                                        {entry.label}
+                                    </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        );
+                    })}
+                </NavigationMenuList>
+            </NavigationMenu>
             <div className="flex items-center space-x-2">
                 <ThemeSwitcher />
             </div>
