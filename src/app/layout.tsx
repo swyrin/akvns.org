@@ -15,8 +15,10 @@ const fontMono = VNS_Font_Mono({
     subsets: ["latin"],
 });
 
+const prod_url = process.env.PRODUCTION_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.PRODUCTION_URL as string),
+    metadataBase: new URL(prod_url),
     title: "Arknights Vietnam Station",
     description: "For the Doctors, by the Doctors.",
     authors: [
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
         },
     ],
     openGraph: {
-        url: process.env.PRODUCTION_URL,
+        url: prod_url,
         title: "Arknights Vietnam Station",
         siteName: "Arknights Vietnam Station",
         description: "For the Doctors, by the Doctors.",
@@ -52,10 +54,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            {/*
-            font-sans here is intentional, override your stuffs with font-mono if needed.
-                    - Đụt, your beloved.
-            */}
             <body className={`${font.variable} ${fontMono.variable} antialiased font-sans`}>
                 <TerraTheme>{children}</TerraTheme>
             </body>
