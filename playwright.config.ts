@@ -8,7 +8,7 @@ export default defineConfig({
     timeout: 30 * 1000,
     testDir: path.join(__dirname, "tests"),
     retries: 1,
-    outputDir: "test-results/",
+    outputDir: "playwright-report/",
     webServer: {
         command: "npm run dev",
         url: baseURL,
