@@ -40,7 +40,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript-eslint/parser": "^8.46.0",
-    "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9.37.0",
     "eslint-plugin-better-tailwindcss": "^3.7.9",
     "eslint-plugin-import-lite": "^0.3.0",

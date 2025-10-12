@@ -89,8 +89,8 @@ export default function NavigationBar() {
                     })}
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className={"hidden items-center space-x-2 md:flex"}>
-                <DiscordInfoCard />
+            <div className={"flex items-center space-x-2"}>
+                <div className={"hidden md:flex"}><DiscordInfoCard /></div>
                 <ThemeSwitcher />
             </div>
         </header>

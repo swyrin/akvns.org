@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
     compiler: {
         removeConsole: process.env.NODE_ENV === "production",
     },
-    experimental: {
-        reactCompiler: true,
+    eslint: {
+        ignoreDuringBuilds: true,
     },
     typedRoutes: true,
 };

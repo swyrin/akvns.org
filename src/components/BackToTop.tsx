@@ -16,19 +16,19 @@ export default function BackToTop() {
         });
     }, []);
 
-    const scrollHandle = useCallback(() => {
-        if (window.scrollY >= 25) {
-            setShowTopButton(true);
-        } else {
-            setShowTopButton(false);
-        }
-    }, []);
-
     useEffect(() => {
+        const scrollHandle = function () {
+            if (window.pageYOffset >= 25) {
+                setShowTopButton(true);
+            } else {
+                setShowTopButton(false);
+            }
+        };
+
         window.addEventListener("scroll", scrollHandle);
 
         return () => window.removeEventListener("scroll", scrollHandle);
-    }, [scrollHandle]);
+    }, []);
 
     return (
         <Button

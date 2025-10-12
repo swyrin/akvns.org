@@ -2,7 +2,7 @@
 
 import DiscordLogo from "@public/brands/discord.svg";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback } from "react";
 
@@ -35,13 +35,16 @@ export default function DiscordInfoCard() {
 
     const allowLogin = Number.parseInt(process.env.NEXT_PUBLIC_DISCORD_LOGIN_ENABLED as string);
 
+    if (!allowLogin)
+        return <></>;
+
     // for future me:
     // https://discord.com/branding
     return session && !isPending
         ? (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button className={"flex flex-1 place-items-center-safe gap-2 bg-[#5865F2] text-white"} variant={"ghost"}>
+                        <Button className={"flex flex-1 place-items-center-safe gap-2"} variant={"outline"}>
                             <Avatar className={"w-[28px] h-auto"}>
                                 <AvatarImage alt={"Discord_Avatar"} src={session.user.image ?? "nothing.png"} />
                                 <AvatarFallback>AK</AvatarFallback>
@@ -55,12 +58,12 @@ export default function DiscordInfoCard() {
                     <DropdownMenuContent align={"end"} className={"mt-1"}>
                         <DropdownMenuLabel className={"font-bold"}>Tài khoản</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        {/* <DropdownMenuItem><Link href={"/profile"}>Hồ sơ</Link></DropdownMenuItem> */}
+                        <DropdownMenuItem><Link href={"/profile"}>Hồ sơ</Link></DropdownMenuItem>
                         <DropdownMenuItem className={"font-extrabold text-red-400"} onClick={handleLogoutClick}>Đăng xuất</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )
-        : (Boolean(allowLogin) && (
+        : (
                 <Button
                     className={"flex flex-1 justify-center items-center gap-2 bg-[#5865F2] text-white hover:bg-black"}
                     onClick={handleLoginClick}
@@ -68,5 +71,5 @@ export default function DiscordInfoCard() {
                     <Image alt={"Discord_Logo"} src={DiscordLogo} width={20} />
                     <span className={"font-bold"}>Login</span>
                 </Button>
-            ));
+            );
 }

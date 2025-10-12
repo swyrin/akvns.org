@@ -7,7 +7,6 @@ import { prisma } from "@/lib/prisma";
 
 export const auth = betterAuth({
     appName: "Arknights Vietnam Station",
-    baseURL: process.env.PRODUCTION_URL ?? "http://localhost:3000",
     database: prismaAdapter(prisma, {
         provider: "postgresql",
     }),
