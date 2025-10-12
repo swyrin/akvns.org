@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "format": "eslint --fix",
-    "prepare": "husky && prisma generate",
+    "prepare": "husky",
     "db:sync": "prisma db push",
     "test": "playwright test"
   },
