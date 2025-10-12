@@ -2,7 +2,7 @@
 
 import DiscordLogo from "@public/brands/discord.svg";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback } from "react";
 
@@ -55,7 +55,7 @@ export default function DiscordInfoCard() {
                     <DropdownMenuContent align={"end"} className={"mt-1"}>
                         <DropdownMenuLabel className={"font-bold"}>Tài khoản</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem><Link href={"/profile"}>Hồ sơ</Link></DropdownMenuItem>
+                        {/* <DropdownMenuItem><Link href={"/profile"}>Hồ sơ</Link></DropdownMenuItem> */}
                         <DropdownMenuItem className={"font-extrabold text-red-400"} onClick={handleLogoutClick}>Đăng xuất</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
