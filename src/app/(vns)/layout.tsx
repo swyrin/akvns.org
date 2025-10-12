@@ -5,7 +5,7 @@ import BackToTop from "@/components/BackToTop";
 import FatFooter from "@/components/FatFooter";
 import NavigationBar from "@/components/NavigationBar";
 
-const production_url = process.env.NEXT_PUBLIC_PRODUCTION_URL ?? "http://localhost:3000";
+const productionUrl = process.env.PRODUCTION_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
     authors: [
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
         },
     ],
     description: "For the Doctors, by the Doctors.",
-    metadataBase: new URL(production_url),
+    metadataBase: new URL(productionUrl),
     openGraph: {
         countryName: "Vietnam",
         description: "For the Doctors, by the Doctors.",
         locale: "vi-VN",
         siteName: "Arknights Vietnam Station",
         title: "Arknights Vietnam Station",
-        url: production_url,
+        url: productionUrl,
     },
     title: "Arknights Vietnam Station",
 };
