@@ -1,7 +1,7 @@
-import FacebookLogo from "@public/facebook.svg";
-import SteamLogo from "@public/steam.svg";
-import VNS_Logo from "@public/VNS.svg";
-import YoutubeLogo from "@public/youtube.svg";
+import FacebookLogo from "@public/brands/facebook.svg";
+import SteamLogo from "@public/brands/steam.svg";
+import YoutubeLogo from "@public/brands/youtube.svg";
+import VNS_Logo from "@public/VNS_Logo.svg";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,18 +17,18 @@ export default function FatFooter() {
             <div className={"flex flex-col justify-evenly gap-y-6 md:flex-1/2 md:flex-row md:place-items-center-safe"}>
                 {/* Logo */}
                 <div className={"mt-8 flex w-full flex-row justify-evenly gap-4 md:w-fit md:flex-col [&_img]:dark:invert"}>
-                    <Image src={VNS_Logo} alt={"VNS_Logo_Footer"} className={"self-center-safe"} width={96} />
-                    <div className={"my-4 flex place-items-center-safe gap-x-2"}>
+                    <Image alt={"VNS_Logo_Footer"} className={"h-auto self-center-safe lg:w-[250px]"} src={VNS_Logo} width={180} />
+                    <div className={"my-4 flex items-center justify-center gap-x-2"}>
                         <Link href={"https://www.facebook.com/terrastationvn"}>
-                            <Image src={FacebookLogo} alt={"FacebookLogo"} width={32} />
+                            <Image alt={"FacebookLogo"} src={FacebookLogo} width={32} />
                         </Link>
                         <div>/</div>
                         <Link href={"https://www.youtube.com/@ArknightsVNS"}>
-                            <Image src={YoutubeLogo} alt={"YoutubeLogo"} width={28} />
+                            <Image alt={"YoutubeLogo"} src={YoutubeLogo} width={28} />
                         </Link>
                         <div>/</div>
                         <Link href={"https://steamcommunity.com/groups/arknights_vietnam_station"}>
-                            <Image src={SteamLogo} alt={"SteamLogo"} width={28} />
+                            <Image alt={"SteamLogo"} src={SteamLogo} width={28} />
                         </Link>
                     </div>
                 </div>
@@ -40,17 +40,17 @@ export default function FatFooter() {
                             <Link href={"https://discord.gg/arknights-vns"}>
                                 Discord:
                                 {" "}
-                                <span className={"font-bold"}>Arknights VNS</span>
+                                <span className={"font-bold underline decoration-dotted underline-offset-4"}>Arknights VNS</span>
                             </Link>
-                            <ArrowUpRight size={18} className={"self-center"} />
+                            <ArrowUpRight className={"self-center"} size={18} />
                         </div>
                         <div className={"flex gap-x-2"}>
                             <Link href={"https://discord.gg/JrZaEVu5Hz"}>
                                 Discord:
                                 {" "}
-                                <span className={"font-bold"}>Phoenix Frontiers</span>
+                                <span className={"font-bold underline decoration-dotted underline-offset-4"}>Phoenix Frontiers</span>
                             </Link>
-                            <ArrowUpRight size={18} className={"self-center"} />
+                            <ArrowUpRight className={"self-center"} size={18} />
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export default function FatFooter() {
                             <span className={"font-bold"}>Email</span>
                             :
                             {" "}
-                            <Link href={"mailto:arknightsvns@gmail.com"} className={"font-mono"}>
+                            <Link className={"font-mono underline decoration-dotted underline-offset-4"} href={"mailto:arknightsvns@gmail.com"}>
                                 arknightsvns@gmail.com
                             </Link>
                         </div>
@@ -71,7 +71,7 @@ export default function FatFooter() {
             <div className={"my-4 text-center font-bold italic"}>
                 ©
                 {" "}
-                <Link href={"/"} className={"font-extrabold text-red-600"}>
+                <Link className={"font-extrabold text-red-600"} href={"/"}>
                     Arknights Vietnam Station
                 </Link>
                 , 2020-nay.
