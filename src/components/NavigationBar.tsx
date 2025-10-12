@@ -63,7 +63,7 @@ export default function NavigationBar() {
                         </div>
                         <SheetFooter className={"flex flex-row justify-start"}>
                             <ThemeSwitcher />
-                            <DiscordInfoCard />
+                            {/* <DiscordInfoCard /> */}
                         </SheetFooter>
                     </SheetContent>
                 </Sheet>
@@ -90,7 +90,7 @@ export default function NavigationBar() {
                 </NavigationMenuList>
             </NavigationMenu>
             <div className={"flex items-center space-x-2"}>
-                <div className={"hidden md:flex"}><DiscordInfoCard /></div>
+                {/* <div className={"hidden md:flex"}><DiscordInfoCard /></div> */}
                 <ThemeSwitcher />
             </div>
         </header>
