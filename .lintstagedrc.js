@@ -9,6 +9,9 @@ const buildEslintCommand = filenames =>
         .map(f => path.relative(process.cwd(), f))
         .join(" ")}`;
 
+/**
+ * @type {import('lint-staged').Configuration}
+ */
 module.exports = {
-    "*.{js,mjs,ts,tsx}": [buildEslintCommand],
+    "*.{mjs,ts,tsx}": [buildEslintCommand],
 };
